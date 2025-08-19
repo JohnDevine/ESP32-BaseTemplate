@@ -1,0 +1,75 @@
+{
+  "projectType": "embedded-c",
+  "platform": "esp32",
+  "framework": "espidf",
+  "ide": "vscode",
+  "buildSystem": "platformio",
+  "structure": {
+    "include": "Header files (.h)",
+    "src": "Source files (.c)",
+    "components": "Optional reusable libraries",
+    "test": "Unit tests (Unity, Ceedling, etc.)",
+    "platformio.ini": "Build configuration"
+  },
+  "fileOrganization": {
+    "main.c": "Only entry-point logic (app_main)",
+    "functionality": "Move to separate .c/.h files under src/ or components",
+    "headers": "Only expose public APIs in /include"
+  },
+  "functionHeaders": {
+    "requirePrototypes": true,
+    "location": "Top of each .c file before app_main or other code"
+  },
+  "codingStyle": {
+    "indent": 4,
+    "indentType": "spaces",
+    "functionNames": "snake_case",
+    "constants": "UPPER_CASE",
+    "structsEnums": "PascalCase",
+    "functionLength": "< 50 lines",
+    "commentStyle": "doxygen"
+  },
+  "platformioConfig": {
+    "pinEspIdfVersion": true,
+    "exampleVersion": "^5.3.0",
+    "monitorSpeed": 115200,
+    "monitorFilters": "esp32_exception_decoder",
+    "buildFlags": ["-Wall", "-Wextra", "-Werror", "-DDEBUG"]
+  },
+  "logging": {
+    "library": "ESP-IDF logging (ESP_LOGI, ESP_LOGW, ESP_LOGE)",
+    "tagPerModule": true,
+    "adjustLogLevel": "menuconfig or sdkconfig.defaults"
+  },
+  "memoryPerformance": {
+    "staticAllocation": true,
+    "preferFreeRtos": true,
+    "minimalIsr": true,
+    "espErrorCheck": true
+  },
+  "testing": {
+    "unitTests": true,
+    "testDir": "test",
+    "framework": "Unity",
+    "mockDrivers": true,
+    "pioTest": true
+  },
+  "gitCi": {
+    "gitignore": [".pio/", ".vscode/", "sdkconfig", "sdkconfig.old"],
+    "ci": ["build firmware", "run unit tests", "check coding style (clang-format)"]
+  },
+  "vscode": {
+    "extensions": ["PlatformIO IDE", "C/C++", "CMake Tools"],
+    "snippets": ["function headers", "logging", "FreeRTOS tasks"]
+  },
+  "checklist": [
+    "Headers at top of .c file",
+    "Small, well-commented functions",
+    "Pin ESP-IDF version in platformio.ini",
+    "Use ESP_LOGx instead of printf",
+    "Check all API calls with ESP_ERROR_CHECK",
+    "Use static memory allocation where possible",
+    "Write unit tests for critical logic",
+    "Enforce clean builds with -Wall -Wextra -Werror"
+  ]
+}
