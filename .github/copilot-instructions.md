@@ -14,8 +14,12 @@
   ├── platformio.ini  # Build configuration
   ```
 
+- **Keep main.cpp, do not use main.c**
+  - main.cpp must be defined with `extern "C"` to prevent name mangling.
+  - remove main.c if it exists as the linker gets confused with C++ name mangling.
+
 - **Split code logically**:
-  - `main.c` should only contain entry-point logic (`app_main()`).
+  - `main.cpp` should only contain entry-point logic (`app_main()`).
   - Move functionality into separate `.c/.h` files under `src/` or `components/`.
 
 - **Headers in `/include`** should only expose **public APIs**, not internal details.

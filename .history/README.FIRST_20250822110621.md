@@ -3,12 +3,9 @@
 1. Change the name "Learn-Unity" to the name of your project.
 2. It will create the project in /Volumes/Work01/Developer/ESP32Projects.
 3. It requires the template project (this project) in /Volumes/Work01/Developer/ESP32Projects/Template
-4. Copy and paste the below to a github agent mode prompt to run. (DO NOT RUN BEFORE doing 5. below!!!!!)
-5. Change "Learn-Unity" to your project name.
-6. Run the prompt in copilot.
-7. If you are going to use doxygen check out the Doxyfile and mod it to suit your project
+4. Copy and paste the below to a github agent mode prompt to run.
+5. If you are going to use doxygen check out the Doxyfile and mod it to suit your project
 8. look in vscode-extensions.txt for the extensions I use and may be needed to use this template.
-9. There is an example prompt in /Volumes/Work01/Developer/ESP32Projects/"YourProject"/prompts/example.copilot.txt (NOTE: replace"YourProject" with your project name)
 
 ---
 ``` prompt

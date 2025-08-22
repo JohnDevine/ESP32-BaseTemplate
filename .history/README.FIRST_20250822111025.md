@@ -8,7 +8,6 @@
 6. Run the prompt in copilot.
 7. If you are going to use doxygen check out the Doxyfile and mod it to suit your project
 8. look in vscode-extensions.txt for the extensions I use and may be needed to use this template.
-9. There is an example prompt in /Volumes/Work01/Developer/ESP32Projects/"YourProject"/prompts/example.copilot.txt (NOTE: replace"YourProject" with your project name)
 
 ---
 ``` prompt

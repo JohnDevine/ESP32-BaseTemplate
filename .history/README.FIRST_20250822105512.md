@@ -3,16 +3,13 @@
 1. Change the name "Learn-Unity" to the name of your project.
 2. It will create the project in /Volumes/Work01/Developer/ESP32Projects.
 3. It requires the template project (this project) in /Volumes/Work01/Developer/ESP32Projects/Template
-4. Copy and paste the below to a github agent mode prompt to run. (DO NOT RUN BEFORE doing 5. below!!!!!)
-5. Change "Learn-Unity" to your project name.
-6. Run the prompt in copilot.
-7. If you are going to use doxygen check out the Doxyfile and mod it to suit your project
+4. Copy and paste the below to a github agent mode prompt to run.
+5. If you are going to use doxygen check out the Doxyfile and mod it to suit your project
 8. look in vscode-extensions.txt for the extensions I use and may be needed to use this template.
-9. There is an example prompt in /Volumes/Work01/Developer/ESP32Projects/"YourProject"/prompts/example.copilot.txt (NOTE: replace"YourProject" with your project name)
 
 ---
 ``` prompt
-Create me a new project. It is a vsc project that uses platformio. I want it to start as a github repository called Learn-Unity. Create the repository and clone it to /Volumes/Work01/Developer/ESP32Projects. Then create a new platformio project over the top of this cloned project so that it has both git initialisation and platform initialisation.  The copy the contents of the folder /Volumes/Work01/Developer/ESP32Projects/Template (NOTE: CONTENTS NOT THE FOLDER ITSELF)  over the folder where GitHub repository was cloned. First, boost this prompt with the prompt boost tool> then show me what you propose doing. Do not do anything yet.
+create an application uses a bme680 connected to an ESP32. Use the documentation on the BME689 in /Volumes/Work01/Developer/ESP32Projects/Learn-Unity/Hardware to create a suitable device driver. Do not use a library.  It connects to a local network. It takes the temperature from the sensor and sends it to an MQTT server. It does this every 5 seconds. The development environment is a Mac 16 Gb running vsc with platformio and uses the espressif if framework. It does NOT use the arduino framework. Use the unity framework from espressif . Create separate files for each component such as temperature.c and temperature.h for temperature related functions. Add documentation suitable for doxygen documentation generation. Generate all the necessary files for a unity test environment. NOTE: USE THE main.cpp IN SRC FOR THE ENTRY POINT, NOT CREATE A NEW main.c
 ```
 # ESP32 Project with Unity Testing Framework
 
