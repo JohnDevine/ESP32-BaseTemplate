@@ -1,19 +1,63 @@
-# Use this command to create a new project from scratch
+# Creating a New ESP32 Project from This Template
 
-1. Change the name "Learn-Unity" to the name of your project.
-2. It will create the project in /Volumes/Work01/Developer/ESP32Projects.
-3. It requires the template project (this project) in /Volumes/Work01/Developer/ESP32Projects/ESP32-BaseTemplate
-4. Copy and paste the below to a github agent mode prompt to run. (DO NOT RUN BEFORE doing 5. below!!!!!)
-5. Change "Learn-Unity" to your project name.
-6. Run the prompt in copilot.
-7. If you are going to use doxygen check out the Doxyfile and mod it to suit your project
-8. look in vscode-extensions.txt for the extensions I use and may be needed to use this template.
-9. YOU MUST DO A COMMIT else you will get a heap of errors.
-10. There is an example prompt in /Volumes/Work01/Developer/ESP32Projects/"YourProject"/prompts/example.copilot.txt (NOTE: replace"YourProject" with your project name)
+This guide walks you through creating a new ESP32 project using this template with GitHub Copilot.
 
----
-``` prompt
-Create me a new project. It is a vsc project that uses platformio. I want it to start as a github repository called Learn-Unity. Create the repository and clone it to /Volumes/Work01/Developer/ESP32Projects. Then create a new platformio project over the top of this cloned project so that it has both git initialisation and platform initialisation.  The copy the contents of the folder /Volumes/Work01/Developer/ESP32Projects/ESP32-BaseTemplate (NOTE: CONTENTS NOT THE FOLDER ITSELF)  over the folder where GitHub repository was cloned. DO NOT COPY IN THE .git folder. edit the CMakeLists.txt file in the root folder  and change "project(Template)" to "project(Learn-Unity)". Commit the project as "Initial Commit" then push changes to github. First, boost this prompt with the prompt boost tool> then show me what you propose doing. Do not do anything yet.
+## Prerequisites
+
+1. GitHub account with repository creation permissions
+2. VSCode with GitHub Copilot extension installed
+3. PlatformIO extension installed in VSCode
+4. This template project located at `/Volumes/Work01/Developer/ESP32Projects/ESP32-BaseTemplate`
+
+## Step-by-Step Instructions
+
+1. **Replace "PROJECT_NAME" in the prompt below** with your desired project name
+2. Copy the entire prompt and paste it to GitHub Copilot in **Agent mode**
+3. Follow the instructions that Copilot provides
+
+## Important Post-Creation Steps
+
+1. **Make an initial commit** after project creation to avoid build errors
+2. Review `Doxyfile` if you plan to use Doxygen for documentation
+3. Check `vscode-extensions.txt` for recommended VSCode extensions
+4. See example prompts in your new project's `/prompts` directory
+
+## Project Creation Prompt
+
+Copy and paste the text below into GitHub Copilot **Agent mode** (not chat mode), after replacing PROJECT_NAME with your actual project name:
+
+```
+I need assistance creating a new VSCode project with PlatformIO for an ESP32 device. Please follow these steps carefully:
+
+1. Create a new GitHub repository:
+   - Repository name: PROJECT_NAME
+   - Make it public
+   - Initialize with a README
+
+2. Clone the repository locally:
+   git clone https://github.com/[YOUR_USERNAME]/PROJECT_NAME.git /Volumes/Work01/Developer/ESP32Projects/PROJECT_NAME
+
+3. Initialize as a PlatformIO project:
+   - Create a new PlatformIO project in the same directory
+   - Board: ESP32 DOIT DevKit V1
+   - Framework: ESP-IDF
+
+4. Copy template files (excluding .git):
+   rsync -av --exclude='.git' /Volumes/Work01/Developer/ESP32Projects/ESP32-BaseTemplate/ /Volumes/Work01/Developer/ESP32Projects/PROJECT_NAME/
+
+5. Update project name in platformio.ini:
+   sed -i '' 's/-D PROJECT_NAME=\"${PIOENV}\"/-D PROJECT_NAME=\"PROJECT_NAME\"/g' /Volumes/Work01/Developer/ESP32Projects/PROJECT_NAME/platformio.ini
+
+6. Update project name in CMakeLists.txt:
+   sed -i '' 's/project(Template)/project(PROJECT_NAME)/g' /Volumes/Work01/Developer/ESP32Projects/PROJECT_NAME/CMakeLists.txt
+
+7. Commit and push changes:
+   cd /Volumes/Work01/Developer/ESP32Projects/PROJECT_NAME
+   git add .
+   git commit -m "Initial Commit"
+   git push origin main
+
+Please help me implement this project setup according to these steps. First, analyze the approach and let me know what you'll do before proceeding.
 ```
 # ESP32 Project with Unity Testing Framework
 
