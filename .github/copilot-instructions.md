@@ -21,6 +21,7 @@
 - **Split code logically**:
   - `main.cpp` should only contain entry-point logic (`app_main()`).
   - Move functionality into separate `.c/.h` files under `src/` or `components/`.
+  - give devices like sensors their own class
 
 - **Headers in `/include`** should only expose **public APIs**, not internal details.
 

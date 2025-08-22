@@ -8,12 +8,11 @@
 6. Run the prompt in copilot.
 7. If you are going to use doxygen check out the Doxyfile and mod it to suit your project
 8. look in vscode-extensions.txt for the extensions I use and may be needed to use this template.
-9. YOU MUST DO A COMMIT else you will get a heap of errors.
-10. There is an example prompt in /Volumes/Work01/Developer/ESP32Projects/"YourProject"/prompts/example.copilot.txt (NOTE: replace"YourProject" with your project name)
+9. There is an example prompt in /Volumes/Work01/Developer/ESP32Projects/"YourProject"/prompts/example.copilot.txt (NOTE: replace"YourProject" with your project name)
 
 ---
 ``` prompt
-Create me a new project. It is a vsc project that uses platformio. I want it to start as a github repository called Learn-Unity. Create the repository and clone it to /Volumes/Work01/Developer/ESP32Projects. Then create a new platformio project over the top of this cloned project so that it has both git initialisation and platform initialisation.  The copy the contents of the folder /Volumes/Work01/Developer/ESP32Projects/ESP32-BaseTemplate (NOTE: CONTENTS NOT THE FOLDER ITSELF)  over the folder where GitHub repository was cloned. DO NOT COPY IN THE .git folder. edit the CMakeLists.txt file in the root folder  and change "project(Template)" to "project(Learn-Unity)". Commit the project as "Initial Commit" then push changes to github. First, boost this prompt with the prompt boost tool> then show me what you propose doing. Do not do anything yet.
+Create me a new project. It is a vsc project that uses platformio. I want it to start as a github repository called Learn-Unity. Create the repository and clone it to /Volumes/Work01/Developer/ESP32Projects. Then create a new platformio project over the top of this cloned project so that it has both git initialisation and platform initialisation.  The copy the contents of the folder /Volumes/Work01/Developer/ESP32Projects/ESP32-BaseTemplate (NOTE: CONTENTS NOT THE FOLDER ITSELF)  over the folder where GitHub repository was cloned. First, boost this prompt with the prompt boost tool> then show me what you propose doing. Do not do anything yet.
 ```
 # ESP32 Project with Unity Testing Framework
 
