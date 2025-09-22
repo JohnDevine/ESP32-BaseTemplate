@@ -1,0 +1,4 @@
+create an application displays the ESP32 System metrics on the console. Look at 
+Hardware/ESP32/ESP-Metrics.md
+for metrics to display. Do not use a library.   
+The development environment is a Mac 16 Gb running vsc with platformio and uses the espressif if framework. It does NOT use the arduino framework. Use the unity framework from espressif . Create separate files for each component. Add documentation suitable for doxygen documentation generation. Generate all the necessary files for a unity test environment. 
